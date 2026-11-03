@@ -1,0 +1,118 @@
+:root {
+  --bg-dark: #0f1a17;
+  --bg-light: #1f2f2a;
+  --accent: #d4af37;
+  --accent-strong: #b8932e;
+  --text: #f3f0e8;
+  --muted: #c9c4b8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  color: var(--text);
+  background: radial-gradient(
+    1200px circle at 20% 20%,
+    #27403a 0%,
+    var(--bg-dark) 45%,
+    #0a1412 100%
+  );
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.card {
+  max-width: 520px;
+  width: 100%;
+  background: linear-gradient(160deg, rgba(31, 47, 42, 0.9) 0%, rgba(14, 22, 19, 0.95) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 18px;
+  padding: 36px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--accent);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  margin-bottom: 18px;
+}
+
+h1 {
+  margin: 0 0 12px 0;
+  font-size: 32px;
+}
+
+.lead {
+  margin: 0 0 24px 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #1b1b1b;
+  background: var(--accent);
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(212, 175, 55, 0.3);
+  background: var(--accent-strong);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(243, 240, 232, 0.3);
+}
+
+.btn.ghost:hover {
+  background: rgba(243, 240, 232, 0.08);
+  box-shadow: none;
+}
+
+@media (max-width: 520px) {
+  .card {
+    padding: 28px 20px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+}
