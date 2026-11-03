@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
 import ObsahSection from './components/ObsahSection.vue'
 import AkcieSection from './components/AkcieSection.vue'
@@ -11,7 +11,7 @@ const cookiesVisible = ref(true)
 const cookieSettingsOpen = ref(false)
 const showHiddenNav = ref(false)
 
-let sectionObserver
+let sectionObserver: IntersectionObserver | undefined
 onMounted(() => {
   window.addEventListener('scroll', handleScroll, { passive: true })
 
@@ -25,7 +25,7 @@ onMounted(() => {
   }, { rootMargin: '0px 0px 180px' })
 
   document.querySelectorAll('.deferred-section').forEach((section) => {
-    sectionObserver.observe(section)
+    sectionObserver?.observe(section)
   })
 })
 onUnmounted(() => {

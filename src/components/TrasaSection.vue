@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 
 const mapActive = ref(false)
@@ -26,7 +26,7 @@ const trasy = {
         <p class="routes-intro">{{ trasy[1].info }}</p>
         <p class="routes-description">{{ trasy[1].popis }}</p>
         <div class="route-facts"><span><strong>{{ trasy[1].dlzka }}</strong> km</span><span><strong>{{ trasy[1].cas }}</strong> odhad</span><span><strong>{{ trasy[1].narocnost }}</strong> náročnosť</span></div>
-        <a class="button button-dark" href="{{ trasy[1].odkazMapy }}" target="_blank" rel="noopener">Otvoriť Mapy.cz <span>↗</span></a>
+            <a class="button button-dark" :href="trasy[1].odkazMapy" target="_blank" rel="noopener">Otvoriť Mapy.cz <span>↗</span></a>
       </div>
       <div class="route-map">
         <div v-if="!mapActive" class="map-placeholder">

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const now = ref(new Date())
@@ -51,7 +51,10 @@ const events = [
 ]
 
 const countdown = computed(() => {
-  const distance = Math.max(new Date('2027-03-10T08:00:00') - now.value, 0)
+  const distance = Math.max(
+    new Date('2027-03-10T08:00:00').getTime() - now.value.getTime(),
+    0,
+  )
   return {
     days: Math.floor(distance / 86400000),
     hours: Math.floor((distance / 3600000) % 24),
@@ -59,7 +62,7 @@ const countdown = computed(() => {
   }
 })
 
-let timer
+let timer: number | undefined
 onMounted(() => {
   timer = window.setInterval(() => {
     now.value = new Date()
@@ -67,7 +70,9 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  window.clearInterval(timer)
+  if (timer !== undefined) {
+    window.clearInterval(timer)
+  }
 })
 
 </script>

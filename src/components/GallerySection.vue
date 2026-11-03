@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 
 const activePhoto = ref(0)
@@ -9,7 +9,7 @@ const photos = [
   { src: '/IMG/lake-8305673.jpg', title: 'Tiché horské jazero' },
 ]
 
-function showPhoto(direction) {
+function showPhoto(direction: number) {
   activePhoto.value =
     (activePhoto.value + direction + photos.length) % photos.length
 }
