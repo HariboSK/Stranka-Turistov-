@@ -6,7 +6,7 @@
       <p class="lead">Mozno je odkaz zly alebo bola stranka presunuta.</p>
       <div class="actions">
         <a class="btn" href="index.html">Späť na úvod</a>
-        <a class="btn ghost" href="kontakt.html">Kontaktuj nás o chybe</a>
+        <a class="btn ghost" href="KontaktView.html">Kontaktuj nás o chybe</a>
       </div>
     </section>
   </main>

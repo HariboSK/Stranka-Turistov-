@@ -1,23 +1,33 @@
-<script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+<script setup>
+import { defineAsyncComponent, onMounted, onUnmounted, ref } from 'vue'
 import ObsahSection from './components/ObsahSection.vue'
 import AkcieSection from './components/AkcieSection.vue'
 import GallerySection from './components/GallerySection.vue'
 import TrasaSection from './components/TrasaSection.vue'
-import FooterSection from './components/FooterSection.vue'
+
+const FooterSection = defineAsyncComponent(() => import('./components/FooterSection.vue'))
 
 const menuOpen = ref(false)
 const cookiesVisible = ref(true)
 const cookieSettingsOpen = ref(false)
 const showHiddenNav = ref(false)
+const waveVisible = ref(false)
+const footerVisible = ref(false)
+const wavePlaceholder = ref(null)
+const footerPlaceholder = ref(null)
 
-let sectionObserver: IntersectionObserver | undefined
+let sectionObserver
 onMounted(() => {
   window.addEventListener('scroll', handleScroll, { passive: true })
 
   sectionObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        if (entry.target === wavePlaceholder.value) {
+          showDeferredContent('wave')
+        } else if (entry.target === footerPlaceholder.value) {
+          showDeferredContent('footer')
+        }
         entry.target.classList.add('is-visible')
         observer.unobserve(entry.target)
       }
@@ -27,6 +37,12 @@ onMounted(() => {
   document.querySelectorAll('.deferred-section').forEach((section) => {
     sectionObserver?.observe(section)
   })
+  if (wavePlaceholder.value) {
+    sectionObserver.observe(wavePlaceholder.value)
+  }
+  if (footerPlaceholder.value) {
+    sectionObserver.observe(footerPlaceholder.value)
+  }
 })
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
@@ -49,64 +65,69 @@ function acceptCookies() {
 function openCookieSettings() {
   cookieSettingsOpen.value = true
 }
+
+function showDeferredContent(content) {
+  if (content === 'wave') {
+    waveVisible.value = true
+  } else {
+    footerVisible.value = true
+  }
+}
 </script>
 
 <template>
-  <header class="header-ostatne">
-    <div class="header-content">
-      <div class="logo-title">
-        <a href="#domov"><img src="/IMG/navbar/logo.webp" alt="Erb turistov" class="logo" /></a>
-        <div class="title-name"><a href="#domov" class="odkaz-klatova"><h1>KLÁTOVA NOVÁ VES KLUB SLOVENSKÝCH TURISTOV KOSTRÍN</h1></a></div>
-      </div>
-      <nav class="navbar" aria-label="Hlavná navigácia">
-        <ul>
-          <li class="hideOnMobile"><a href="#domov" class="nav-link">Domov</a></li>
-          <li class="hideOnMobile"><a href="#o-nas" class="nav-link">O nás</a></li>
-          <li class="hideOnMobile"><a href="#akcie" class="nav-link">Akcie</a></li>
-          <li class="hideOnMobile"><a href="#galeria" class="nav-link">Galéria</a></li>
-          <li class="hideOnMobile"><a href="#trasy" class="nav-link">Trasy & Mapy</a></li>
-          <li class="hideOnMobile"><a href="#kontakt" class="nav-link">Kontakt</a></li>
-          <li class="hideOnMobile"><a href="#pridaj-sa" class="nav-link">Pridaj sa tu</a></li>
-
-
-          <li class="menu-button"><button type="button" aria-label="Otvoriť menu" @click="menuOpen = !menuOpen">{{ menuOpen ? '×' : '☰' }}</button></li>
-        </ul>
-      </nav>
-    </div>
-    <nav class="skrytyNav" :class="{ show: showHiddenNav }" aria-label="Rýchla navigácia">
-      <a href="#domov">
-        <img src="/IMG/navbar/logo.webp" alt="Erb turistov" class="logo-skryty" />
-      </a>
-      <ul class="menu-skryte">
-        <li class="hideOnMobile"><a href="#domov" class="nav-link">Domov</a></li>
-        <li class="hideOnMobile"><a href="#o-nas" class="nav-link">O nás</a></li>
-        <li class="hideOnMobile"><a href="#akcie" class="nav-link">Akcie</a></li>
-        <li class="hideOnMobile"><a href="#galeria" class="nav-link">Galéria</a></li>
-        <li class="hideOnMobile"><a href="#trasy" class="nav-link">Trasy & Mapy</a></li>
-        <li class="hideOnMobile"><a href="#kontakt" class="nav-link">Kontakt</a></li>
-        <li class="hideOnMobile"><a href="#pridaj-sa" class="nav-link">Pridaj sa tu</a></li>
-        <li class="menu-button">
-          <button type="button" aria-label="Otvoriť menu" @click="menuOpen = !menuOpen">
-            {{ menuOpen ? '×' : '☰' }}
-          </button>
-        </li>
-      </ul>
-    </nav>
-    <nav v-if="menuOpen" class="navbar-side" aria-label="Mobilná navigácia">
-      <ul class="sidebar">
-        <li><a href="#domov" class="nav-side-link" @click="closeMenu">Domov</a></li>
-        <li><a href="#o-nas" class="nav-side-link" @click="closeMenu">O nás</a></li>
-        <li><a href="#akcie" class="nav-side-link" @click="closeMenu">Akcie</a></li>
-        <li><a href="#galeria" class="nav-side-link" @click="closeMenu">Galéria</a></li>
-        <li><a href="#trasy" class="nav-side-link" @click="closeMenu">Trasy & Mapy</a></li>
-        <li><a href="#kontakt" class="nav-side-link" @click="closeMenu">Kontakt</a></li>
-        <li><a href="#pridaj-sa" class="nav-side-link" @click="closeMenu">Pridaj sa tu</a></li>
-      </ul>
-    </nav>
-  </header>
-
   <main>
     <section id="domov" class="hero">
+      <header class="header-ostatne">
+        <div class="header-content">
+          <div class="logo-title">
+            <a href="#domov"><img src="/IMG/navbar/logo.webp" alt="Erb turistov" class="logo" /></a>
+            <div class="title-name"><a href="#domov" class="odkaz-klatova"><h1>KLÁTOVA NOVÁ VES KLUB SLOVENSKÝCH TURISTOV KOSTRÍN</h1></a></div>
+          </div>
+          <nav class="navbar" aria-label="Hlavná navigácia">
+            <ul>
+              <li class="hideOnMobile"><a href="#domov" class="nav-link">Domov</a></li>
+              <li class="hideOnMobile"><a href="#o-nas" class="nav-link">O nás</a></li>
+              <li class="hideOnMobile"><a href="#akcie" class="nav-link">Akcie</a></li>
+              <li class="hideOnMobile"><a href="#galeria" class="nav-link">Galéria</a></li>
+              <li class="hideOnMobile"><a href="#trasy" class="nav-link">Trasy & Mapy</a></li>
+              <li class="hideOnMobile"><a href="#kontakt" class="nav-link">Kontakt</a></li>
+              <li class="hideOnMobile"><a href="#pridaj-sa" class="nav-link">Pridaj sa tu</a></li>
+              <li class="menu-button"><button type="button" aria-label="Otvoriť menu" @click="menuOpen = !menuOpen">{{ menuOpen ? '×' : '☰' }}</button></li>
+            </ul>
+          </nav>
+        </div>
+        <nav class="skrytyNav" :class="{ show: showHiddenNav }" aria-label="Rýchla navigácia">
+          <a href="#domov">
+            <img src="/IMG/navbar/logo.webp" alt="Erb turistov" class="logo-skryty" />
+          </a>
+          <ul class="menu-skryte">
+            <li class="hideOnMobile"><a href="#domov" class="nav-link">Domov</a></li>
+            <li class="hideOnMobile"><a href="#o-nas" class="nav-link">O nás</a></li>
+            <li class="hideOnMobile"><a href="#akcie" class="nav-link">Akcie</a></li>
+            <li class="hideOnMobile"><a href="#galeria" class="nav-link">Galéria</a></li>
+            <li class="hideOnMobile"><a href="#trasy" class="nav-link">Trasy & Mapy</a></li>
+            <li class="hideOnMobile"><a href="#kontakt" class="nav-link">Kontakt</a></li>
+            <li class="hideOnMobile"><a href="#pridaj-sa" class="nav-link">Pridaj sa tu</a></li>
+            <li class="menu-button">
+              <button type="button" aria-label="Otvoriť menu" @click="menuOpen = !menuOpen">
+                {{ menuOpen ? '×' : '☰' }}
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <nav v-if="menuOpen" class="navbar-side" aria-label="Mobilná navigácia">
+          <ul class="sidebar">
+            <li><a href="#domov" class="nav-side-link" @click="closeMenu">Domov</a></li>
+            <li><a href="#o-nas" class="nav-side-link" @click="closeMenu">O nás</a></li>
+            <li><a href="#akcie" class="nav-side-link" @click="closeMenu">Akcie</a></li>
+            <li><a href="#galeria" class="nav-side-link" @click="closeMenu">Galéria</a></li>
+            <li><a href="#trasy" class="nav-side-link" @click="closeMenu">Trasy & Mapy</a></li>
+            <li><a href="#kontakt" class="nav-side-link" @click="closeMenu">Kontakt</a></li>
+            <li><a href="#pridaj-sa" class="nav-side-link" @click="closeMenu">Pridaj sa tu</a></li>
+          </ul>
+        </nav>
+      </header>
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="eyebrow">KLUB SLOVENSKÝCH TURISTOV</p>
@@ -130,7 +151,7 @@ function openCookieSettings() {
       <div class="section-label">05 / SPOJME SA</div>
       <h2>Uvidíme sa<br /><em>na chodníku.</em></h2>
       <p>Napíš nám, príď na akciu alebo nás len sleduj. Každý výlet začína jedným rozhodnutím vyraziť.</p>
-      <a class="button button-light" href="/kontakt.html">Kontaktuj nás <span>↗</span></a>
+      <a class="button button-light" href="/KontaktView.html">Kontaktuj nás <span>↗</span></a>
     </section>
   </main>
 
@@ -151,11 +172,13 @@ function openCookieSettings() {
     </div>
   </div>
 
-  <div class="wave-top deferred-section">
+  <div v-if="!waveVisible" ref="wavePlaceholder" class="deferred-placeholder wave-placeholder" aria-hidden="true"></div>
+  <div v-else class="wave-top">
     <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
       <path fill="#0b2818" fill-opacity="1" d="M0,160L40,170C80,180,160,200,240,192C320,184,400,148,480,133.3C560,119,640,133,720,144C800,155,880,165,960,176C1040,187,1120,197,1200,186.7C1280,176,1360,144,1440,112L1440,320L0,320Z"></path>
     </svg>
   </div>
 
-  <FooterSection />
+  <div v-if="!footerVisible" ref="footerPlaceholder" class="deferred-placeholder footer-placeholder" aria-hidden="true"></div>
+  <FooterSection v-else />
 </template>

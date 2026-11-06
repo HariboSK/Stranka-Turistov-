@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
+<script setup>
 const obsah = {
     nazov: 'Nie sme len',
     zvyraznene:'turistický klub',
@@ -27,7 +25,7 @@ const obsah = {
         <h2>{{obsah.nazov}}<br /><em>{{obsah.zvyraznene}}</em></h2>
         <div>
           <p>{{obsah.popisok}}</p>
-          <a class="text-link" href="/o_nas.html">Spoznaj nás bližšie <span>↗</span></a>
+          <a class="text-link" href="/OnasView.html">Spoznaj nás bližšie <span>↗</span></a>
         </div>
       </div>
       <div class="stats">

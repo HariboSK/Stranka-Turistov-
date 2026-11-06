@@ -299,6 +299,19 @@ button {
     transform 0.7s ease;
 }
 
+.deferred-placeholder {
+  content-visibility: auto;
+  width: 100%;
+}
+
+.wave-placeholder {
+  height: 100px;
+}
+
+.footer-placeholder {
+  min-height: 260px;
+}
+
 #akcie.deferred-section,
 #trasy.deferred-section {
   transform: translateX(70px);
@@ -829,7 +842,7 @@ button {
 /* HLAVNY NAVBAR */
 .header-ostatne {
   background: var(--paper);
-  padding: 24px clamp(18px, 5vw, 76px);
+  padding: 10px clamp(10px, 5vw, 76px);
 }
 
 .header-content {
@@ -841,7 +854,7 @@ button {
   justify-content: space-between;
   margin: 0 auto;
   max-width: var(--content-max-width);
-  padding: 12px 22px;
+  padding: 0px 10px;
   overflow: hidden;
   position: relative;
 }

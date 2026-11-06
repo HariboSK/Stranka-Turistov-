@@ -1,6 +1,6 @@
 <template>
   <!-- Header / Navbar -->
-  <header class="kontakt-header">
+  <header class="header-ostatne">
     <!-- NAVBAR ERB A NADPIS -->
     <div class="header-content">
       <div class="logo-title">
@@ -18,9 +18,9 @@
       <nav class="navbar">
         <ul>
           <li class="hideOnMobile"><a href="/index.html" class="nav-link">Domov</a></li>
-          <li class="hideOnMobile"><a href="/o_nas.html" class="nav-link">O nás</a></li>
-          <li class="hideOnMobile"><a href="/index.html#galeria" class="nav-link">Galéria</a></li>
-          <li class="hideOnMobile"><a href="/kontakt.html" class="nav-link">Kontakt</a></li>
+          <li class="hideOnMobile"><a href="/OnasView.html" class="nav-link">O nás</a></li>
+          <li class="hideOnMobile"><a href="/GaleriaView.html" class="nav-link">Galéria</a></li>
+          <li class="hideOnMobile"><a href="/KontaktView.html" class="nav-link">Kontakt</a></li>
           <li class="hideOnMobile"><a href="/index.html#akcie" class="nav-link">Akcie</a></li>
           <li class="hideOnMobile">
             <a href="/index.html#trasa" class="nav-link">Trasy & Mapy</a>
@@ -51,9 +51,9 @@
             /></a>
           </li>
           <li><a href="/index.html" class="nav-side-link">Domov</a></li>
-          <li><a href="/o_nas.html" class="nav-side-link">O nás</a></li>
-          <li><a href="/index.html#galeria" class="nav-side-link">Galéria</a></li>
-          <li><a href="/kontakt.html" class="nav-side-link">Kontakt</a></li>
+          <li><a href="/OnasView.html" class="nav-side-link">O nás</a></li>
+          <li><a href="/GaleriaView.html" class="nav-side-link">Galéria</a></li>
+          <li><a href="/KontaktView.html" class="nav-side-link">Kontakt</a></li>
           <li><a href="/index.html#akcie" class="nav-side-link">Akcie</a></li>
           <li><a href="/index.html#trasa" class="nav-side-link">Trasy & Mapy</a></li>
         </ul>
@@ -67,9 +67,9 @@
       </a>
       <ul class="menu-skryte">
         <li class="hideOnMobile"><a href="/index.html" class="nav-link">Domov</a></li>
-        <li class="hideOnMobile"><a href="/o_nas.html" class="nav-link">O nás</a></li>
-        <li class="hideOnMobile"><a href="/galeria.html" class="nav-link">Galéria</a></li>
-        <li class="hideOnMobile"><a href="/kontakt.html" class="nav-link">Kontakt</a></li>
+        <li class="hideOnMobile"><a href="/OnasView.html" class="nav-link">O nás</a></li>
+        <li class="hideOnMobile"><a href="/GaleriaView.html" class="nav-link">Galéria</a></li>
+        <li class="hideOnMobile"><a href="/KontaktView.html" class="nav-link">Kontakt</a></li>
         <li class="hideOnMobile"><a href="/index.html#akcie" class="nav-link">Akcie</a></li>
         <li class="hideOnMobile"><a href="/index.html#trasa" class="nav-link">Trasy & Mapy</a></li>
         <li class="menu-button" data-sidebar-action="open">
@@ -97,71 +97,87 @@
             /></a>
           </li>
           <li><a href="/index.html" class="nav-side-link">Domov</a></li>
-          <li><a href="/o_nas.html" class="nav-side-link">O nás</a></li>
-          <li><a href="/galeria.html" class="nav-side-link">Galéria</a></li>
-          <li><a href="/kontakt.html" class="nav-side-link">Kontakt</a></li>
+          <li><a href="/OnasView.html" class="nav-side-link">O nás</a></li>
+          <li><a href="/GaleriaView.html" class="nav-side-link">Galéria</a></li>
+          <li><a href="/KontaktView.html" class="nav-side-link">Kontakt</a></li>
           <li><a href="/index.html#akcie" class="nav-side-link">Akcie</a></li>
           <li><a href="/index.html#trasa" class="nav-side-link">Trasy & Mapy</a></li>
         </ul>
       </nav>
     </nav>
   </header>
+
   <main>
-    <!-- KONTAKTNY FORMULAR -->
-    <section class="kontakt-section">
-      <div class="container">
-        <h1 class="kontakt-title">Kontaktujte nás</h1>
-        <p class="kontakt-popis">Máte otázky? Chcete sa pripojiť k nám? Napíšte nám!</p>
-
-        <div class="kontakt-container">
-          <!-- Formulár -->
-          <form class="contact-form" id="contactForm" novalidate>
-            <div class="form-group">
-              <label for="name">Meno:</label>
-              <input type="text" id="name" name="name" required />
-              <small class="error-message" id="nameError"></small>
+    <div class="container-hero">
+      <!--HERO SEKCIA-->
+      <section class="hero-section">
+        <div class="foto-hero">
+          <img src="/IMG/hory_zapad_2.webp" alt="Hory" class="hero-img" />
+          <div class="text-hero">
+            <div class="fade-up-text">
+              <h1>O NÁS</h1>
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required />
-              <small class="error-message" id="emailError"></small>
+      <!--POD HERO PARAGRAF-->
+      <section class="pod-hero-container fade-up-text">
+        <p>
+          Objavte krásu slovenských hôr, lesov a dolín spolu s nami. Náš klub spája ľudí, ktorí
+          milujú prírodu, pohyb a priateľskú atmosféru. Organizujeme túry, výlety a akcie pre všetky
+          vekové kategórie – od nenáročných prechádzok až po dobrodružné horské výstupy.
+        </p>
+        <p>
+          Pridajte sa k nám a zažite Slovensko tak, ako ho poznáme my –
+          <em>plné prírodných krás, tradícií a nezabudnuteľných zážitkov.</em>
+        </p>
+      </section>
+
+      <!-- OBSAH O NAS-->
+      <section class="about-section" id="o_nas">
+        <div class="section-content">
+          <div class="about-image-wrapper imageReveal">
+            <img
+              src="/IMG/Strazovsky_vrch_.jpg"
+              alt="O nás fotka"
+              class="about-image"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="about-details">
+            <h2 class="section-title">O NÁS</h2>
+            <div class="text-box">
+              <article class="text">
+                Slovensko je krajinou hôr, lesov a dolín, ktorá každoročne láka tisíce turistov.
+                Naše Tatry, historické mestá a zachovalé hrady sú miestami, kde návštevníci
+                nachádzajú pokoj, dobrodružstvo aj kultúrne zážitky. Klub slovenských turistov
+                Kostrín je súčasťou tejto tradície – spájame ľudí, ktorí milujú prírodu, pohyb a
+                priateľskú atmosféru. Organizujeme túry a akcie pre všetky vekové kategórie, aby sme
+                ukázali krásu Slovenska doma aj zahraničným návštevníkom.
+              </article>
             </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
-            <div class="form-group">
-              <label for="phone">Telefón:</label>
-              <input type="tel" id="phone" name="phone" />
-              <small class="error-message" id="phoneError"></small>
-            </div>
-
-            <div class="form-group">
-              <label for="subject">Predmet:</label>
-              <select id="subject" name="subject" required>
-                <option value="">-- Vyberte --</option>
-                <option value="chcem_sem">Chcem sa prihlásiť na zájazd</option>
-                <option value="pripojit">Chcem sa pripojiť</option>
-                <option value="informacie">Informácie o akciách</option>
-                <option value="ina">Iné (uvedte v správe)</option>
-              </select>
-              <small class="error-message" id="subjectError"></small>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Správa:</label>
-              <textarea id="message" name="message" rows="6" required></textarea>
-              <small class="error-message" id="messageError"></small>
-            </div>
-
-            <div class="form-group checkbox-group">
-              <input type="checkbox" id="consent" name="consent" required />
-              <label for="consent" class="checkbox-label"
-                >Súhlasím so spracovaním mojich osobných údajov</label
-              >
-              <small class="error-message" id="consentError"></small>
-            </div>
-
-            <button type="submit" class="btn-submit">Poslať správu</button>
-          </form>
+    <!-- GOALS / ŠTATISTIKA SEKCIA -->
+    <section class="stats-section">
+      <h2 class="stats-title">Naše úspechy</h2>
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-number" data-target="15">0</div>
+          <p class="stat-label">Zdolaných štítov</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="20">0</div>
+          <p class="stat-label">Odznakov</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="5">0</div>
+          <p class="stat-label">Poharov za horolezectvo</p>
         </div>
       </div>
     </section>
@@ -187,13 +203,13 @@
         <div class="contact-footer">
           <h4>Kontaktujte nás</h4>
           <a href="mailto:info@gmail.com"
-            ><img src="/IMG/telefon_icon.png" alt="telefon_icon" /><i aria-hidden="true">
-              +421 1121 2221
+            ><img src="/IMG/telefon_icon.png" alt="telefon_icon" /><i aria-hidden="true"
+              >+421 1121 2221
             </i></a
           >
           <a href="tel:+42111212221"
-            ><img src="/IMG/emai_icon.png" alt="email_icon" /><i aria-hidden="true">
-              info@gmail.com
+            ><img src="/IMG/emai_icon.png" alt="email_icon" /><i aria-hidden="true"
+              >info@gmail.com
             </i></a
           >
         </div>
@@ -210,9 +226,9 @@
         <div class="fast-a-footer">
           <h4>Rýchle odkazy</h4>
           <p><a href="/index.html" class="policy-link">Domov</a></p>
-          <p><a href="/o_nas.html" class="policy-link">O nás</a></p>
+          <p><a href="/OnasView.html" class="policy-link">O nás</a></p>
           <p><a href="#akcie" class="policy-link">Akcie</a></p>
-          <p><a href="/kontakt.html" class="policy-link">Galéria</a></p>
+          <p><a href="/KontaktView.html" class="policy-link">Galéria</a></p>
         </div>
         <div class="footer-info">
           <p class="policy-text">© 2025 Klub slovenských turistov Kostrín</p>
@@ -221,7 +237,7 @@
           <div class="policy-links">
             <a href="#" class="policy-link">GDPR</a>
             <span class="separator">|</span>
-            <a href="/kontakt.html" class="policy-link">Kontakt</a>
+            <a href="/KontaktView.html" class="policy-link">Kontakt</a>
           </div>
         </div>
       </div>
@@ -230,11 +246,11 @@
       </div>
     </footer>
   </main>
-
   <!--HAMBURGER JAVASCIRPT-->
   <!--SKRYTY NAVBAR PRI SCROLLE JAVASCIRPT-->
-  <!--JAVASCRIPT NA KONTAKTNY FORMULAR-->
+  <!--COUNTER JAVASCIRPT-->
+  <!--SCROLL REVEAL JAVASCIRPT-->
 </template>
 
 <style src="../styles/shared.css"></style>
-<style src="../styles/kontakt.css"></style>
+<style src="../styles/onas.css"></style>

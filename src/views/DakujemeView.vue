@@ -18,9 +18,9 @@
       <nav class="navbar">
         <ul>
           <li class="hideOnMobile"><a href="/index.html" class="nav-link">Domov</a></li>
-          <li class="hideOnMobile"><a href="/o_nas.html" class="nav-link">O nás</a></li>
+          <li class="hideOnMobile"><a href="/OnasView.html" class="nav-link">O nás</a></li>
           <li class="hideOnMobile"><a href="#galeria" class="nav-link">Galéria</a></li>
-          <li class="hideOnMobile"><a href="/kontakt.html" class="nav-link">Kontakt</a></li>
+          <li class="hideOnMobile"><a href="/KontaktView.html" class="nav-link">Kontakt</a></li>
           <li class="hideOnMobile"><a href="/index.html#akcie" class="nav-link">Akcie</a></li>
           <li class="hideOnMobile">
             <a href="/index.html#trasa" class="nav-link">Trasy & Mapy</a>
@@ -51,9 +51,9 @@
             /></a>
           </li>
           <li><a href="/index.html" class="nav-side-link">Domov</a></li>
-          <li><a href="/o_nas.html" class="nav-side-link">O nás</a></li>
+          <li><a href="/OnasView.html" class="nav-side-link">O nás</a></li>
           <li><a href="#galeria" class="nav-side-link">Galéria</a></li>
-          <li><a href="/kontakt.html" class="nav-side-link">Kontakt</a></li>
+          <li><a href="/KontaktView.html" class="nav-side-link">Kontakt</a></li>
           <li><a href="/index.html#akcie" class="nav-side-link">Akcie</a></li>
           <li><a href="/index.html#trasa" class="nav-side-link">Trasy & Mapy</a></li>
         </ul>
@@ -66,9 +66,9 @@
       </a>
       <ul class="menu-skryte">
         <li class="hideOnMobile"><a href="/index.html" class="nav-link">Domov</a></li>
-        <li class="hideOnMobile"><a href="/o_nas.html" class="nav-link">O nás</a></li>
-        <li class="hideOnMobile"><a href="/galeria.html" class="nav-link">Galéria</a></li>
-        <li class="hideOnMobile"><a href="/kontakt.html" class="nav-link">Kontakt</a></li>
+        <li class="hideOnMobile"><a href="/OnasView.html" class="nav-link">O nás</a></li>
+        <li class="hideOnMobile"><a href="/GaleriaView.html" class="nav-link">Galéria</a></li>
+        <li class="hideOnMobile"><a href="/KontaktView.html" class="nav-link">Kontakt</a></li>
         <li class="hideOnMobile"><a href="/index.html#akcie" class="nav-link">Akcie</a></li>
         <li class="hideOnMobile"><a href="/index.html#trasa" class="nav-link">Trasy & Mapy</a></li>
         <li class="menu-button" data-sidebar-action="open">
@@ -96,9 +96,9 @@
             /></a>
           </li>
           <li><a href="/index.html" class="nav-side-link">Domov</a></li>
-          <li><a href="/o_nas.html" class="nav-side-link">O nás</a></li>
-          <li><a href="/galeria.html" class="nav-side-link">Galéria</a></li>
-          <li><a href="/kontakt.html" class="nav-side-link">Kontakt</a></li>
+          <li><a href="/OnasView.html" class="nav-side-link">O nás</a></li>
+          <li><a href="/GaleriaView.html" class="nav-side-link">Galéria</a></li>
+          <li><a href="/KontaktView.html" class="nav-side-link">Kontakt</a></li>
           <li><a href="/index.html#akcie" class="nav-side-link">Akcie</a></li>
           <li><a href="/index.html#trasa" class="nav-side-link">Trasy & Mapy</a></li>
         </ul>
@@ -112,7 +112,7 @@
       <p>Vašu správu sme úspešne prijali. Ozveme sa Vám v najbližšom možnom termíne.</p>
       <div class="thanks-actions">
         <a href="/index.html" class="btn-home">Domov</a>
-        <a href="/kontakt.html" class="btn-contact">Kontakt</a>
+        <a href="/KontaktView.html" class="btn-contact">Kontakt</a>
       </div>
     </section>
   </main>
@@ -161,9 +161,9 @@
       <div class="fast-a-footer">
         <h4>Rýchle odkazy</h4>
         <p><a href="/index.html" class="policy-link">Domov</a></p>
-        <p><a href="/o_nas.html" class="policy-link">O nás</a></p>
+        <p><a href="/OnasView.html" class="policy-link">O nás</a></p>
         <p><a href="#akcie" class="policy-link">Akcie</a></p>
-        <p><a href="/kontakt.html" class="policy-link">Galéria</a></p>
+        <p><a href="/KontaktView.html" class="policy-link">Galéria</a></p>
       </div>
       <div class="footer-info">
         <p class="policy-text">© 2025 Klub slovenských turistov Kostrín</p>
@@ -172,7 +172,7 @@
         <div class="policy-links">
           <a href="#" class="policy-link">GDPR</a>
           <span class="separator">|</span>
-          <a href="/kontakt.html" class="policy-link">Kontakt</a>
+          <a href="/KontaktView.html" class="policy-link">Kontakt</a>
         </div>
       </div>
     </div>

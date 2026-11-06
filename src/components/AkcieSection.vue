@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const now = ref(new Date())
@@ -62,7 +62,7 @@ const countdown = computed(() => {
   }
 })
 
-let timer: number | undefined
+let timer
 onMounted(() => {
   timer = window.setInterval(() => {
     now.value = new Date()

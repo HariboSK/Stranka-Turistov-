@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue'
 
 const udaje = ref({
@@ -14,7 +14,7 @@ const udaje = ref({
 </script>
 
 <template>
-    <footer class="footer-section deferred-section">
+    <footer class="footer-section">
         <div class="section-content">
         <div class="footer-logo"><a href="#domov"><img src="/IMG/navbar/logo2.webp" alt="Erb turistov" class="footer-logo" /></a></div>
         <div class="contact-footer"><h4>Kontaktujte nás</h4><a href="{{ udaje.kontakt.email }}"><img src="/IMG/telefon_icon.png" alt="" /><i> {{udaje.kontakt.telefon}} </i></a><a href="{{udaje.kontakt.telefon}}"><img src="/IMG/emai_icon.png" alt="" /><i> {{udaje.kontakt.email}}</i></a></div>

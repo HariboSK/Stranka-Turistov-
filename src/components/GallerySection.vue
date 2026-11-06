@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue'
 
 const activePhoto = ref(0)
@@ -9,7 +9,7 @@ const photos = [
   { src: '/IMG/lake-8305673.jpg', title: 'Tiché horské jazero' },
 ]
 
-function showPhoto(direction: number) {
+function showPhoto(direction) {
   activePhoto.value =
     (activePhoto.value + direction + photos.length) % photos.length
 }
@@ -32,7 +32,7 @@ function showPhoto(direction: number) {
         <img :src="photos[activePhoto].src" :alt="photos[activePhoto].title" loading="lazy" />
         <figcaption><span>{{ photos[activePhoto].title }}</span><span>KST KOSTRÍN</span></figcaption>
       </figure>
-      <a class="text-link" href="/galeria.html">Pozrieť celú galériu <span>↗</span></a>
+      <a class="text-link" href="/GaleriaView.html">Pozrieť celú galériu <span>↗</span></a>
     </section>
 
 </template>
