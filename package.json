@@ -10,6 +10,7 @@
     "format": "prettier --write --experimental-cli src/"
   },
   "dependencies": {
+    "motion": "^14.9.1",
     "vue": "^3.5.42"
   },
   "devDependencies": {

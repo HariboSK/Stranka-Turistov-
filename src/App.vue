@@ -93,7 +93,11 @@ function showDeferredContent(content) {
               <li class="hideOnMobile"><a href="#trasy" class="nav-link">Trasy & Mapy</a></li>
               <li class="hideOnMobile"><a href="#kontakt" class="nav-link">Kontakt</a></li>
               <li class="hideOnMobile"><a href="#pridaj-sa" class="nav-link">Pridaj sa tu</a></li>
-              <li class="menu-button"><button type="button" aria-label="Otvoriť menu" @click="menuOpen = !menuOpen">{{ menuOpen ? '×' : '☰' }}</button></li>
+              <li class="menu-button">
+                <button type="button" class="hamburger" :class="{ 'is-open': menuOpen }" :aria-expanded="menuOpen" aria-label="Otvoriť menu" @click="menuOpen = !menuOpen">
+                  <span></span><span></span><span></span>
+                </button>
+              </li>
             </ul>
           </nav>
         </div>
@@ -110,23 +114,25 @@ function showDeferredContent(content) {
             <li class="hideOnMobile"><a href="#kontakt" class="nav-link">Kontakt</a></li>
             <li class="hideOnMobile"><a href="#pridaj-sa" class="nav-link">Pridaj sa tu</a></li>
             <li class="menu-button">
-              <button type="button" aria-label="Otvoriť menu" @click="menuOpen = !menuOpen">
-                {{ menuOpen ? '×' : '☰' }}
+              <button type="button" class="hamburger" :class="{ 'is-open': menuOpen }" :aria-expanded="menuOpen" aria-label="Otvoriť menu" @click="menuOpen = !menuOpen">
+                <span></span><span></span><span></span>
               </button>
             </li>
           </ul>
         </nav>
-        <nav v-if="menuOpen" class="navbar-side" aria-label="Mobilná navigácia">
-          <ul class="sidebar">
-            <li><a href="#domov" class="nav-side-link" @click="closeMenu">Domov</a></li>
-            <li><a href="#o-nas" class="nav-side-link" @click="closeMenu">O nás</a></li>
-            <li><a href="#akcie" class="nav-side-link" @click="closeMenu">Akcie</a></li>
-            <li><a href="#galeria" class="nav-side-link" @click="closeMenu">Galéria</a></li>
-            <li><a href="#trasy" class="nav-side-link" @click="closeMenu">Trasy & Mapy</a></li>
-            <li><a href="#kontakt" class="nav-side-link" @click="closeMenu">Kontakt</a></li>
-            <li><a href="#pridaj-sa" class="nav-side-link" @click="closeMenu">Pridaj sa tu</a></li>
-          </ul>
-        </nav>
+        <Transition name="menu-panel">
+          <nav v-if="menuOpen" class="navbar-side" aria-label="Mobilná navigácia">
+            <ul class="sidebar">
+              <li><a href="#domov" class="nav-side-link" @click="closeMenu">Domov</a></li>
+              <li><a href="#o-nas" class="nav-side-link" @click="closeMenu">O nás</a></li>
+              <li><a href="#akcie" class="nav-side-link" @click="closeMenu">Akcie</a></li>
+              <li><a href="#galeria" class="nav-side-link" @click="closeMenu">Galéria</a></li>
+              <li><a href="#trasy" class="nav-side-link" @click="closeMenu">Trasy & Mapy</a></li>
+              <li><a href="#kontakt" class="nav-side-link" @click="closeMenu">Kontakt</a></li>
+              <li><a href="#pridaj-sa" class="nav-side-link" @click="closeMenu">Pridaj sa tu</a></li>
+            </ul>
+          </nav>
+        </Transition>
       </header>
       <div class="hero-overlay"></div>
       <div class="hero-content">

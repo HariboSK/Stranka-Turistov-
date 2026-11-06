@@ -165,12 +165,11 @@ button {
 .hero {
   align-items: flex-end;
   background:
-    url('/videa/optimizet-video.mkv') center / cover,
     linear-gradient(90deg, rgba(2, 2, 2, 0.86), rgba(13, 28, 20, 0.18)),
     url('/IMG/hory_zapad_2.webp') center / cover;
   color: var(--cream);
   display: flex;
-  min-height: calc(100vh - 92px);
+  min-height: 100vh;
   overflow: hidden;
   padding: clamp(44px, 9vw, 135px) clamp(22px, 10vw, 150px);
   position: relative;
@@ -754,7 +753,7 @@ button {
     text-align: center;
   }
   .hero {
-    min-height: calc(100vh - 78px);
+    min-height: 100vh;
     padding: 80px 22px;
   }
   .hero h1 {
@@ -841,20 +840,23 @@ button {
 
 /* HLAVNY NAVBAR */
 .header-ostatne {
-  background: var(--paper);
-  padding: 10px clamp(10px, 5vw, 76px);
+  left: 0;
+  padding: 5px clamp(10px, 5vw, 50px);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 3;
 }
 
 .header-content {
   align-items: center;
-  background: #eef0df;
-  border: 1px solid var(--olive-border);
-  box-shadow: 0 12px 30px rgba(23, 35, 29, 0.08);
+  background: transparent;
+  box-shadow: none;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
   max-width: var(--content-max-width);
-  padding: 0px 10px;
+  padding: 0px 0px;
   overflow: hidden;
   position: relative;
 }
@@ -875,11 +877,11 @@ button {
 .logo-title {
   align-items: center;
   display: flex;
-  gap: 18px;
+  gap: 20px;
 }
 .logo {
   height: auto;
-  width: 82px;
+  width: 100px;
 }
 .logo:hover {
   transform: scale(1.08);
@@ -888,7 +890,7 @@ button {
   max-width: 340px;
 }
 .title-name h1 {
-  color: var(--olive-dark);
+  color: var(--cream);
   font:
     500 clamp(1rem, 1.8vw, 1.45rem) 'Playfair Display',
     serif;
@@ -927,9 +929,6 @@ button {
   z-index: 100;
 }
 
-.skrytyNav li:nth-last-child(2) .nav-link {
-}
-
 .skrytyNav.show {
   opacity: 1;
   transform: translateY(0);
@@ -952,16 +951,25 @@ button {
 }
 
 .skrytyNav .nav-link {
-  font-size: 12px;
+  color: black;
+  font-size: 15px;
   padding: 10px 12px;
+}
+
+.skrytyNav .nav-link:hover{
+  color: black;
 }
 
 .skrytyNav .menu-button {
   display: none;
 }
 
+.skrytyNav .menu-button button {
+  color: var(--olive-dark);
+}
+
 .nav-link {
-  color: #000;
+  color: var(--cream);
   display: inline-block;
   font-size: 13px;
   font-weight: 700;
@@ -972,7 +980,7 @@ button {
   transition: color 0.25s ease, transform 0.25s ease;
 }
 .nav-link::after {
-  background: var(--olive-light);
+  background: var(--sun-light);
   bottom: 5px;
   content: '';
   height: 2px;
@@ -984,7 +992,7 @@ button {
   width: calc(100% - 24px);
 }
 .nav-link:hover {
-  color: var(--olive-light);
+  color: var(--sun-light);
   transform: scale(1.25);
 }
 .nav-link:hover::after {
@@ -992,9 +1000,9 @@ button {
 }
 .navbar li:nth-last-child(2) .nav-link {
   background:
-    linear-gradient(var(--olive-light), var(--olive-light)) 0 100% / 0 100% no-repeat,
-    var(--olive-dark);
-  color: #f8f6f0;
+    linear-gradient(black, black) 0 100% / 0 100% no-repeat,
+    var(--sun-light);
+  color: black;
   margin-left: 8px;
   overflow: hidden;
   padding: 13px 17px;
@@ -1007,15 +1015,13 @@ button {
 }
 
 .navbar li:nth-last-child(2) .nav-link:hover {
-  color: var(--olive-dark);
+  color: var(--sun-light);
   background-size: 100% 100%, auto;
   transform: translateY(-2px);
 }
 
 
- /* li                  /* element li */
- /* nth-last-child(2)  /* druhý od konca */
- /* nav-link           /* trieda vo vnútri li */
+ /* Špeciálny štýl pre tlačidlo „Pridaj sa tu“ */
 
 .skrytyNav li:nth-last-child(2) .nav-link {
   background:
@@ -1043,18 +1049,63 @@ button {
   display: none;
 }
 .menu-button button {
+  align-items: center;
   background: none;
   border: 0;
-  color: var(--ink);
+  color: var(--cream);
   cursor: pointer;
-  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  min-height: 44px;
   padding: 8px;
+  width: 44px;
+}
+.hamburger span {
+  background: currentColor;
+  border-radius: 999px;
+  display: block;
+  height: 2px;
+  transform-origin: center;
+  transition: transform 0.28s ease, opacity 0.2s ease;
+  width: 26px;
+}
+.hamburger.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 .navbar-side {
   background: #eef0df;
   border-top: 1px solid var(--olive-border);
   margin: 12px auto 0;
   max-width: var(--content-max-width);
+  transform-origin: top right;
+}
+.menu-panel-enter-active,
+.menu-panel-leave-active {
+  overflow: hidden;
+  transition:
+    opacity 0.28s ease,
+    transform 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    max-height 0.34s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.menu-panel-enter-from,
+.menu-panel-leave-to {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-12px) scale(0.08, 0.08);
+}
+.menu-panel-enter-to,
+.menu-panel-leave-from {
+  max-height: 420px;
+  opacity: 1;
+  transform: translateY(0) scale(1, 1);
 }
 .sidebar {
   display: flex;
@@ -1065,13 +1116,19 @@ button {
   padding: 18px 22px;
 }
 .nav-side-link {
+  border-radius: 6px;
   color: var(--ink);
+  display: block;
   font-size: 12px;
   font-weight: 700;
+  padding: 10px 12px;
   text-transform: uppercase;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 .nav-side-link:hover {
-  color: var(--sun);
+  background: var(--olive-light);
+  color: var(--olive-dark);
+  transform: translateX(4px);
 }
 
 .wave-top {
