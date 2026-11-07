@@ -23,33 +23,24 @@
   --olive-light: #a7ad63;
   --olive-dark: #303b24;
   --olive-border: #c5c99d;
-  --ramcek-menu-color: #fff;
   --footer-bg: #0a1207;
   --footer-text: #f5f4e8;
   --muted-light: rgba(248, 246, 240, 0.72);
-  --muted-dark: rgba(23, 35, 29, 0.7);
   --line: rgba(23, 35, 29, 0.18);
 
   /* Premenne pre gradient MOUSE */
   --mouse-x: -100px;
   --mouse-y: -100px;
-  --mouse-gradient:#cebd00;
+  --mouse-gradient: #cebd00;
 
   /* VELKOSTI */
-  --text-xs: 10px;
-  --text-sm: 11px;
-  --text-base: 13px;
   --text-md: 16px;
-  --text-lg: 18px;
   --title-sm: clamp(45px, 6.2vw, 85px);
   --title-lg: clamp(56px, 8vw, 116px);
 
   /* ROZLOZENIE */
   --content-max-width: 1240px;
   --section-padding: clamp(70px, 10vw, 150px);
-  --content-gap: 25px;
-  --transition-fast: 0.25s ease;
-  --transition-normal: 0.35s ease;
 
   font-family: 'Space Grotesk', sans-serif;
   color: var(--ink);
@@ -80,85 +71,9 @@ button {
   font: inherit;
 }
 
-/* ZAKLADNA NAVIGACIA */
-.site-header {
-  align-items: center;
-  background: var(--paper);
-  display: flex;
-  justify-content: space-between;
-  padding: 22px clamp(22px, 5vw, 76px);
-  position: relative;
-  z-index: 5;
-}
-.brand {
-  align-items: center;
-  display: inline-flex;
-  gap: 12px;
-}
-.brand-logo {
-  height: 48px;
-  object-fit: contain;
-  width: 58px;
-}
-.brand-copy strong,
-.brand-copy small {
-  display: block;
-  line-height: 1;
-}
-.brand-copy strong {
-  font-size: 13px;
-  letter-spacing: 0.12em;
-}
-.brand-copy small {
-  font-size: 8px;
-  letter-spacing: 0.2em;
-  margin-top: 6px;
-}
-.main-nav {
-  align-items: center;
-  display: flex;
-  gap: 32px;
-}
-.main-nav a {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  position: relative;
-  text-transform: uppercase;
-}
-.main-nav a:not(.nav-cta)::after {
-  background: var(--sun);
-  bottom: -8px;
-  content: '';
-  height: 2px;
-  left: 0;
-  position: absolute;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease;
-  width: 100%;
-}
-.main-nav a:not(.nav-cta):hover::after {
-  transform: scaleX(1);
-}
-.main-nav a:not(.nav-cta):hover {
-  color: var(--moss);
-}
-.nav-cta {
-  background: var(--ink);
-  color: var(--cream);
-  padding: 13px 17px;
-}
-.nav-cta span,
 .button span {
   font-size: 18px;
   margin-left: 12px;
-}
-.menu-toggle {
-  background: none;
-  border: 0;
-  display: none;
-  font-size: 26px;
 }
 
 /* HERO */
@@ -236,7 +151,9 @@ button {
   transition: background-size 0.35s ease;
 }
 .button-light:hover {
-  background-size: 100% 100%, auto;
+  background-size:
+    100% 100%,
+    auto;
 }
 .button-dark {
   background:
@@ -308,6 +225,7 @@ button {
 }
 
 .footer-placeholder {
+  background: var(--paper);
   min-height: 260px;
 }
 
@@ -692,76 +610,50 @@ button {
   max-width: 440px;
 }
 
-/* STARY FOOTER */
-.site-footer {
-  align-items: flex-start;
-  background: var(--forest);
-  color: var(--cream);
-  display: grid;
-  gap: 35px;
-  grid-template-columns: 1.3fr 1fr 1fr 1fr 1.4fr;
-  padding: 55px clamp(22px, 6vw, 90px);
-}
-.site-footer h4 {
-  color: var(--sun);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-.site-footer a {
-  display: block;
-  font-size: 12px;
-  line-height: 2;
-}
-.site-footer a:hover {
-  color: var(--sun);
-}
-.footer-brand img {
-  max-width: 180px;
-}
-.footer-note {
-  color: rgba(248, 246, 240, 0.65);
-  font-size: 11px;
-  line-height: 1.8;
-}
-
 /* RESPONZIVNE PRAVIDLA */
 @media (max-width: 760px) {
-  .menu-toggle {
-    display: block;
-  }
-  .main-nav {
-    align-items: stretch;
-    background: var(--cream);
-    display: none;
-    flex-direction: column;
-    gap: 0;
-    left: 0;
-    padding: 10px 22px 20px;
-    position: absolute;
-    right: 0;
-    top: 78px;
-  }
-  .main-nav.is-open {
-    display: flex;
-  }
-  .main-nav a {
-    padding: 16px 0;
-  }
   .navbar li:nth-last-child(2) .nav-link {
     margin-left: 0;
     text-align: center;
   }
+
   .hero {
     min-height: 100vh;
     padding: 80px 22px;
   }
+
   .hero h1 {
     font-size: 67px;
   }
+
   .hero-stamp {
     right: 10%;
     top: 15%;
+  }
+
+  /* Interné stránky používajú svetlý papier, preto musia mať tmavú navigáciu. */
+  .header-ostatne:not(.header-home) {
+    background: var(--paper);
+    color: var(--ink);
+    padding: 10px clamp(22px, 10vw, 150px);
+    position: relative;
+  }
+  .header-ostatne:not(.header-home) .header-content {
+    overflow: visible;
+  }
+  .header-ostatne:not(.header-home) .title-name h1,
+  .header-ostatne:not(.header-home) .nav-link {
+    color: var(--ink);
+  }
+  .header-ostatne:not(.header-home) .nav-link:hover,
+  .header-ostatne:not(.header-home) .skrytyNav .nav-link:hover {
+    color: var(--olive-dark);
+  }
+  .header-ostatne:not(.header-home) .menu-button button {
+    color: var(--ink);
+  }
+  .header-ostatne:not(.header-home) .skrytyNav {
+    background: var(--cream);
   }
   .split-heading,
   .routes {
@@ -831,17 +723,12 @@ button {
   .routes .button {
     margin-top: 40px;
   }
-  .site-footer {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-  }
 }
 
 /* HLAVNY NAVBAR */
 .header-ostatne {
   left: 0;
-  padding: 5px clamp(10px, 5vw, 50px);
+  padding: 10px clamp(22px, 10vw, 150px);
   position: absolute;
   right: 0;
   top: 0;
@@ -855,8 +742,7 @@ button {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: var(--content-max-width);
-  padding: 0px 0px;
+  padding: 0;
   overflow: hidden;
   position: relative;
 }
@@ -882,9 +768,11 @@ button {
 .logo {
   height: auto;
   width: 100px;
+  transition: transform 0.3s ease;
 }
+
 .logo:hover {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 .title-name {
   max-width: 340px;
@@ -892,10 +780,10 @@ button {
 .title-name h1 {
   color: var(--cream);
   font:
-    500 clamp(1rem, 1.8vw, 1.45rem) 'Playfair Display',
+    1000 clamp(1rem, 1.8vw, 1.45rem) 'Playfair Display',
     serif;
-  letter-spacing: 0.02em;
-  line-height: 1.08;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
 }
 .navbar ul {
   align-items: center;
@@ -917,7 +805,7 @@ button {
   justify-content: space-between;
   left: 0;
   opacity: 0;
-  padding: 15px clamp(20px, 8vw, 70px);
+  padding: 8px clamp(20px, 8vw, 70px);
   position: fixed;
   right: 0;
   top: 0;
@@ -938,7 +826,7 @@ button {
 .skrytyNav .logo-skryty {
   display: block;
   height: auto;
-  width: 80px;
+  width: 62px;
 }
 
 .skrytyNav .menu-skryte {
@@ -953,10 +841,10 @@ button {
 .skrytyNav .nav-link {
   color: black;
   font-size: 15px;
-  padding: 10px 12px;
+  padding: 5px 9px;
 }
 
-.skrytyNav .nav-link:hover{
+.skrytyNav .nav-link:hover {
   color: black;
 }
 
@@ -977,7 +865,9 @@ button {
   padding: 14px 12px;
   position: relative;
   text-transform: uppercase;
-  transition: color 0.25s ease, transform 0.25s ease;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 .nav-link::after {
   background: var(--sun-light);
@@ -1007,7 +897,9 @@ button {
   overflow: hidden;
   padding: 13px 17px;
   position: relative;
-  transition: background-size 0.35s ease, transform 0.25s ease;
+  transition:
+    background-size 0.35s ease,
+    transform 0.25s ease;
 }
 
 .navbar li:nth-last-child(2) .nav-link::after {
@@ -1016,12 +908,13 @@ button {
 
 .navbar li:nth-last-child(2) .nav-link:hover {
   color: var(--sun-light);
-  background-size: 100% 100%, auto;
+  background-size:
+    100% 100%,
+    auto;
   transform: translateY(-2px);
 }
 
-
- /* Špeciálny štýl pre tlačidlo „Pridaj sa tu“ */
+/* Špeciálny štýl pre tlačidlo „Pridaj sa tu“ */
 
 .skrytyNav li:nth-last-child(2) .nav-link {
   background:
@@ -1032,7 +925,9 @@ button {
   overflow: hidden;
   padding: 10px 12px;
   position: relative;
-  transition: background-size 0.35s ease, transform 0.25s ease;
+  transition:
+    background-size 0.35s ease,
+    transform 0.25s ease;
 }
 
 .skrytyNav li:nth-last-child(2) .nav-link::after {
@@ -1041,7 +936,9 @@ button {
 
 .skrytyNav li:nth-last-child(2) .nav-link:hover {
   color: var(--olive-dark);
-  background-size: 100% 100%, auto;
+  background-size:
+    100% 100%,
+    auto;
   transform: translateY(-2px);
 }
 
@@ -1068,7 +965,9 @@ button {
   display: block;
   height: 2px;
   transform-origin: center;
-  transition: transform 0.28s ease, opacity 0.2s ease;
+  transition:
+    transform 0.28s ease,
+    opacity 0.2s ease;
   width: 26px;
 }
 .hamburger.is-open span:nth-child(1) {
@@ -1123,7 +1022,10 @@ button {
   font-weight: 700;
   padding: 10px 12px;
   text-transform: uppercase;
-  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 .nav-side-link:hover {
   background: var(--olive-light);
@@ -1132,7 +1034,7 @@ button {
 }
 
 .wave-top {
-  background: var(--ink);
+  background: var(--paper);
   height: 100px;
   margin-bottom: -1px;
   overflow: hidden;
@@ -1150,6 +1052,12 @@ button {
 .wave-top path {
   fill: var(--footer-bg);
 }
+body:has(.stats-section) .wave-top {
+  background: var(--olive-dark);
+}
+body:has(.section-pad) .wave-top {
+  background: var(--ink);
+}
 
 .footer-section {
   background: var(--footer-bg);
@@ -1161,7 +1069,10 @@ button {
   display: grid;
   font-weight: bold;
   gap: 1.25rem;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.4fr);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
+      0,
+      1.4fr
+    );
   margin: 0 auto;
   max-width: 1300px;
   padding-left: 10px;
@@ -1173,7 +1084,7 @@ button {
   padding-top: 24px;
 }
 .created-footer h5 {
-  color: #d4af37;;
+  color: #d4af37;
   font-size: 15px;
   text-align: center;
 }
@@ -1185,7 +1096,7 @@ button {
 }
 .contact-footer h4,
 .fast-a-footer h4 {
-   color: #d4af37;;
+  color: #d4af37;
   font-size: 17px;
   margin: 0 0 5px;
 }
@@ -1196,7 +1107,8 @@ button {
   word-spacing: 2px;
 }
 .contact-footer a img {
-  filter: brightness(0) saturate(100%) invert(70%) sepia(75%) saturate(650%) hue-rotate(2deg) brightness(92%);
+  filter: brightness(0) saturate(100%) invert(70%) sepia(75%) saturate(650%) hue-rotate(2deg)
+    brightness(92%);
   height: 20px;
   margin-right: 8px;
   object-fit: contain;
@@ -1205,7 +1117,7 @@ button {
 }
 .contact-footer a:hover,
 .policy-link:hover {
-  color: #d4af37;;
+  color: #d4af37;
 }
 .footer-logo {
   display: flex;

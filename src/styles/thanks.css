@@ -1,100 +1,45 @@
-/* Background & layout */
-body {
-  background-image: url('/IMG/kontakt_bg.jpg') !important;
-  background-size: cover !important;
-  background-position: center !important;
-}
-
 .thanks-wrapper {
-  min-height: calc(100vh - 160px);
-  display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
+  display: flex;
+  min-height: 62vh;
+  padding: var(--section-padding) clamp(22px, 10vw, 150px);
 }
-
 .thanks-card {
-  background: rgba(11, 40, 24, 0.75); /* polopriehľadné tmavé pozadie */
-  border: 2px solid var(--secondary-color); /* použiješ z rootu */
-  color: var(--white-color);
-  padding: 36px 40px;
-  border-radius: var(--border-radius-s);
-  max-width: 900px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(6px); /* jemné rozmazanie pozadia */
+  background: var(--ink);
+  color: var(--cream);
+  max-width: 760px;
+  padding: clamp(30px, 7vw, 80px);
 }
-
 .thanks-card h1 {
-  color: var(--accent-color);
-  font-size: 2.2rem;
-  margin-bottom: 12px;
+  font-size: clamp(48px, 8vw, 100px);
+  letter-spacing: -0.08em;
+  line-height: 0.88;
+  margin: 0 0 22px;
 }
-
 .thanks-card p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.05rem;
-  margin-bottom: 22px;
+  color: var(--muted-light);
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 530px;
 }
-
 .thanks-actions {
-  display: inline-flex;
-  gap: 12px;
-  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
 }
-
 .btn-home,
 .btn-contact {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: var(--border-radius-s);
-  text-decoration: none;
-  font-weight: var(--font-weight-bold);
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease; /* plynulý prechod */
-  cursor: pointer;
+  padding: 14px 20px;
 }
-
-/* Domov tlačidlo – zlaté pozadie */
 .btn-home {
-  background: var(--secondary-color);
-  color: var(--primary-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  background: var(--sun);
+  color: var(--ink);
 }
-
-.btn-home:hover {
-  background: transparent;
-  color: var(--secondary-color);
-  border: 2px solid var(--secondary-color);
-  transform: translateY(-2px); /* jemné nadvihnutie */
-}
-
-/* Kontakt tlačidlo – priesvitné s bielym textom */
 .btn-contact {
-  background: transparent;
-  color: var(--white-color);
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--cream);
+  color: var(--cream);
 }
-
-.btn-contact:hover {
-  background: var(--white-color);
-  color: var(--primary-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-}
-
-@media (max-width: 720px) {
-  .thanks-card {
-    padding: 28px 18px;
-  }
-  .thanks-card h1 {
-    font-size: 1.6rem;
-  }
-  .thanks-wrapper {
-    min-height: calc(100vh - 120px);
-  }
-  .thanks-actions {
-    flex-direction: column;
-  }
+.btn-home:hover {
+  background: var(--sun-light);
 }

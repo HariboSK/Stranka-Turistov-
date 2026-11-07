@@ -1,32 +1,5 @@
 <template>
-  <!-- Prihlasovacie okno -->
-  <div id="login-container" class="login-container">
-    <div class="login-box">
-      <a href="index.html" class="odkaz-logo">
-        <img src="/IMG/navbar/logo.webp" alt="Logo" class="login-logo" />
-      </a>
-      <h2>Admin Prihlásenie</h2>
-      <form id="login-form">
-        <div class="form-group">
-          <label for="username">Používateľské meno:</label>
-          <input type="text" id="username" required />
-        </div>
-        <div class="form-group">
-          <label for="password">Heslo:</label>
-          <input type="password" id="password" required />
-        </div>
-        <button type="submit" class="btn-primary">Prihlásiť sa</button>
-        <p id="error-message" class="error-message"></p>
-      </form>
-      <div class="demo-info">
-        <p><strong>Prihlasovanie:</strong></p>
-        <p>Pouzi <code>ADMIN_USERNAME</code> a <code>ADMIN_PASSWORD</code> z <code>.env</code>.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Admin Panel -->
-  <div id="admin-panel" class="admin-panel is-hidden" hidden inert aria-hidden="true">
+  <div id="admin-panel" class="admin-panel">
     <!-- Header -->
     <header class="admin-header">
       <div class="admin-header-content">
@@ -202,12 +175,8 @@
     </main>
   </div>
 
-  <!-- Firebase SDK (odkomentuj keď nastavíš Firebase) -->
-  <!--
-    -->
-
   <!-- Admin JavaScript -->
 </template>
 
 <style src="../styles/shared.css"></style>
-<style src="../styles/admin.css"></style>
+<style scoped src="../styles/admin.css"></style>

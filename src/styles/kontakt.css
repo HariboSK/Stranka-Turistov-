@@ -1,345 +1,117 @@
-body {
-  background-image: url('/IMG/kontakt_bg.webp') !important;
-  background-size: cover !important;
-  background-position: center !important;
+.header-ostatne:not(.header-home) .title-name h1,
+.header-ostatne:not(.header-home) .nav-link {
+  color: var(--ink) !important;
 }
-
-/*KONTAKTNY FORMULAR*/
-.kontakt-header {
-  padding: 2rem 0;
+.header-ostatne:not(.header-home) .nav-link:hover {
+  color: var(--olive-dark) !important;
 }
-
-/* KONTAKTNA SEKCIA */
+.header-ostatne:not(.header-home) .menu-button button {
+  color: var(--ink) !important;
+}
 .kontakt-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 14px 16px;
-  max-width: 640px;
-  width: 100%;
-  margin: 0 auto;
-  border-radius: 28px;
-  backdrop-filter: blur(15px);
-  background: rgba(11, 40, 24, 0.65); /* jemne priesvitné pozadie */
-  box-shadow: 0 0 12px var(--nadpis-akcie-color);
-}
-
-.kontakt-title {
-  text-align: center;
-  font-size: var(--font-size-xl); /* o trochu menší nadpis */
-  color: var(--nadpis-akcie-color);
-  margin-bottom: 12px;
-  font-weight: var(--font-weight-bold);
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-}
-
-.kontakt-popis {
-  text-align: center;
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-n);
-  color: var(--white-color);
-  margin-bottom: 18px;
-}
-
-.kontakt-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* FORMULÁR */
-.contact-form {
-  background: var(--bg-color);
-  backdrop-filter: blur(10px);
-  padding: 28px;
-  border-radius: 12px;
-  border: 2px solid #d4af37;
-  width: 100%;
-  max-width: 560px;
-  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
-}
-
-.form-group {
-  margin-bottom: 18px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 6px;
-  color: #ffffff;
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-m);
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #d4af37;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  font-size: var(--font-size-n);
-  transition: 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.btn-submit {
-  width: 100%;
-  padding: 12px;
-  background-color: #d4af37;
-  color: #1b4332;
-  border: none;
-  border-radius: 8px;
-  font-size: var(--font-size-m);
-  font-weight: var(--font-weight-bold);
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-}
-
-.btn-submit:hover {
-  background-color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
-}
-
-/* VYBER */
-.form-group select {
-  width: 100%;
-  padding: 10px 36px 10px 12px;
-  border: 1px solid #d4af37;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  font-size: var(--font-size-n);
-  transition: 0.3s ease;
-  appearance: none;
-  background-image: url('/IMG/sipka-dole.png');
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 14px;
-}
-
-.form-group select:focus {
-  outline: none;
-  border-color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-}
-
-.form-group option {
-  background-color: var(--bg-color);
-  color: #ffffff;
-}
-
-/* CHECKBOX */
-.checkbox-group {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 18px;
-}
-
-.checkbox-group input[type='checkbox'] {
-  width: 20px;
-  height: 20px;
-  appearance: none;
-  cursor: pointer;
-  border: 2px solid #d4af37;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.1);
-  transition:
-    background-color 0.3s ease,
-    box-shadow 0.3s ease;
+  color: var(--cream);
+  isolation: isolate;
+  min-height: 820px;
+  padding: var(--section-padding) clamp(22px, 10vw, 150px);
   position: relative;
 }
-
-/* fajka vnútri boxu */
-.checkbox-group input[type='checkbox']::after {
-  content: '✓';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  color: var(--bg-color);
-  font-weight: bold;
-  font-size: 14px;
-  opacity: 0;
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
+.kontakt-section .container {
+  margin: auto;
+  max-width: var(--content-max-width);
+  position: relative;
+  z-index: 1;
 }
-
-.checkbox-group input[type='checkbox']:hover {
-  background-color: rgba(212, 175, 55, 0.2);
-  box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+.kontakt-title {
+  margin-bottom: 24px;
 }
-
-.checkbox-group input[type='checkbox']:checked {
-  background-color: #d4af37;
-  border-color: #d4af37;
+.kontakt-section .section-label {
+  color: var(--sun-light);
 }
-
-/* fajka sa zobrazí s animáciou */
-.checkbox-group input[type='checkbox']:checked::after {
-  transform: translate(-50%, -50%) scale(1);
+.kontakt-title {
+  color: var(--cream);
+  max-width: 780px;
+}
+.kontakt-popis {
+  color: rgba(248, 246, 240, 0.82);
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 540px;
+}
+.kontakt-container {
+  display: grid;
+  grid-template-columns: minmax(0, 680px);
+  margin-top: 48px;
+}
+.contact-form {
+  background: rgba(248, 246, 240, 0.97);
+  border: 0;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
+  color: var(--ink);
+  padding: clamp(22px, 5vw, 52px);
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: var(--cream);
+  border: 1px solid var(--olive-border);
+  border-radius: 0;
+  color: var(--ink);
+  padding: 13px 12px;
+  width: 100%;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--sun);
+  outline: 0;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--moss);
   opacity: 1;
 }
-
-.checkbox-group input[type='checkbox']:focus {
-  outline: none;
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+.checkbox-group {
+  align-items: start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
-
+.checkbox-group input {
+  width: auto;
+}
 .checkbox-label {
-  margin-bottom: 0 !important;
-  color: #ffffff;
-  font-weight: var(--font-weight-normal);
-  font-size: var(--font-size-n);
-  cursor: pointer;
-  line-height: 1.4;
+  font-size: 12px !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
 }
-
-/*error*/
 .error-message {
-  color: #ff0000;
-  font-size: var(--font-size-n);
-  margin-top: 4px;
+  color: #a74432;
   display: block;
+  min-height: 16px;
 }
-
-/*FACEBOOK LINK*/
-.social-link1F {
-  color: var(--primary-color);
-  font-size: 50px;
-  transition:
-    0,
-    2 ease;
+.btn-submit {
+  background: var(--ink);
+  border: 0;
+  color: var(--cream);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 17px 22px;
+  text-transform: uppercase;
 }
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .kontakt-section {
-    width: 90%;
-  }
-
-  .contact-form {
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .kontakt-section {
-    width: 95%;
-    padding: 20px;
-    border-radius: 30px;
-  }
-
-  .kontakt-container {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .contact-form {
-    padding: 25px;
-    width: 100%;
-    border-radius: 12px;
-  }
-
-  .kontakt-title {
-    font-size: var(--font-size-xl);
-    margin-bottom: 10px;
-  }
-
-  .kontakt-popis {
-    font-size: var(--font-size-n);
-    margin-bottom: 20px;
-  }
-
-  .form-group {
-    margin-bottom: 18px;
-  }
-
-  .form-group label {
-    font-size: var(--font-size-n);
-    margin-bottom: 6px;
-  }
-
-  .form-group input,
-  .form-group textarea,
-  .form-group select {
-    padding: 10px 12px;
-    font-size: 16px;
-  }
-
-  .btn-submit {
-    padding: 12px;
-    font-size: var(--font-size-n);
-  }
-
-  .checkbox-group {
-    gap: 10px;
-  }
-
-  .checkbox-group input[type='checkbox'] {
-    width: 18px;
-    height: 18px;
-  }
-
-  .checkbox-label {
-    font-size: var(--font-size-n);
-  }
-}
-
-@media (max-width: 480px) {
-  .checkbox-group input[type='checkbox']:checked + .checkbox-label::before {
-    left: -25px;
-    bottom: 13px;
-    position: absolute;
-  }
-
-  .kontakt-section {
-    padding: 15px;
-    width: 100%;
-    border-radius: 20px;
-  }
-
-  .contact-form {
-    padding: 18px;
-    border-radius: 10px;
-  }
-
-  .kontakt-title {
-    font-size: var(--font-size-l);
-  }
-
-  .kontakt-popis {
-    font-size: var(--font-size-s);
-  }
-
-  .form-group input,
-  .form-group textarea,
-  .form-group select {
-    padding: 10px;
-    font-size: 16px;
-  }
-
-  .btn-submit {
-    padding: 11px;
-  }
+.btn-submit:hover {
+  background: var(--sun);
+  color: var(--ink);
 }

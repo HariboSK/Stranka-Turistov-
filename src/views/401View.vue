@@ -1,15 +1,12 @@
 <template>
   <main class="page">
     <section class="card">
-      <div class="badge">401</div>
-      <h1>Neautorizovany pristup</h1>
-      <p class="lead">Na zobrazenie tejto stranky sa musite prihlasit.</p>
-      <div class="actions">
-        <a class="btn" href="AdminView.html">Prihlasit sa</a>
-        <a class="btn ghost" href="index.html">Spat na uvod</a>
-      </div>
+      <div class="badge">CHYBA / 401</div>
+      <h1>Prístup je zamknutý.</h1>
+      <p class="lead">Na túto trasu potrebuješ prihlásenie.</p>
+      <div class="actions"><RouterLink class="btn" to="/admin">Prihlásiť sa</RouterLink><RouterLink class="btn ghost" to="/">Späť na úvod</RouterLink></div>
     </section>
   </main>
 </template>
-
-<style src="../styles/error.css"></style>
+<style src="../styles/shared.css"></style>
+<style scoped src="../styles/error.css"></style>

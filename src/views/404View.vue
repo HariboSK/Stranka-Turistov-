@@ -1,15 +1,12 @@
 <template>
   <main class="page">
     <section class="card">
-      <div class="badge">404</div>
-      <h1>Stranka nebola najdena</h1>
-      <p class="lead">Mozno je odkaz zly alebo bola stranka presunuta.</p>
-      <div class="actions">
-        <a class="btn" href="index.html">Späť na úvod</a>
-        <a class="btn ghost" href="KontaktView.html">Kontaktuj nás o chybe</a>
-      </div>
+      <div class="badge">CHYBA / 404</div>
+      <h1>Táto trasa neexistuje.</h1>
+      <p class="lead">Odkaz je nesprávny alebo bola stránka presunutá. Vráť sa na chodník a skús to znova.</p>
+      <div class="actions"><RouterLink class="btn" to="/">Späť na úvod</RouterLink><RouterLink class="btn ghost" to="/kontakt">Nahlásiť problém</RouterLink></div>
     </section>
   </main>
 </template>
-
-<style src="../styles/error.css"></style>
+<style src="../styles/shared.css"></style>
+<style scoped src="../styles/error.css"></style>
