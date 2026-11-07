@@ -210,6 +210,9 @@ button {
   pointer-events: auto;
   transform: translateY(0);
 }
+.skrytyNav .nav-link {
+  padding: 8px 10px;
+}
 .logo-skryty {
   height: auto;
   width: 62px;
@@ -306,7 +309,12 @@ body:has(.stats-section) .wave-top {
   background: var(--olive-dark);
 }
 body:has(.kontakt-section) .wave-top {
-  background:rgba(243, 244, 243, 0);
+  background: rgba(243, 244, 243, 0);
+}
+body:has(.kontakt-section) .wave-top,
+body:has(.kontakt-section) .footer-section {
+  position: relative;
+  z-index: 10;
 }
 .wave-top svg {
   display: block;

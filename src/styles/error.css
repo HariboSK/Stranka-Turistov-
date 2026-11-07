@@ -5,7 +5,9 @@
     url('/IMG/mountain-clouds.jpg') center / cover;
   display: flex;
   min-height: 100vh;
+  overflow: hidden;
   padding: clamp(24px, 8vw, 110px);
+  position: relative;
 }
 .card {
   background: var(--cream);
@@ -14,6 +16,18 @@
   max-width: 760px;
   padding: clamp(32px, 7vw, 82px);
   position: relative;
+  z-index: 1;
+}
+.error-maskot {
+  bottom: 0;
+  height: min(92vh, 820px);
+  object-fit: contain;
+  object-position: bottom right;
+  pointer-events: none;
+  position: absolute;
+  right: 3vw;
+  width: auto;
+  z-index: 0;
 }
 .card::after {
   color: var(--olive-border);
@@ -78,5 +92,10 @@
   }
   .card {
     padding: 32px 24px;
+  }
+  .error-maskot {
+    height: 48vh;
+    opacity: 0.35;
+    right: -12vw;
   }
 }

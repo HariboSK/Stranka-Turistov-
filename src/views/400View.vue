@@ -1,5 +1,6 @@
 <template>
   <main class="page">
+    <img src="/IMG/maskot/MaskotErrorPagepng.png" alt="" class="error-maskot" aria-hidden="true" />
     <section class="card">
       <div class="badge">CHYBA / 400</div>
       <h1>Táto požiadavka nesedí.</h1>

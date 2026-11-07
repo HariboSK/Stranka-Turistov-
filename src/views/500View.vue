@@ -1,5 +1,6 @@
 <template>
   <main class="page">
+    <img src="/IMG/maskot/MaskotErrorPagepng.png" alt="" class="error-maskot" aria-hidden="true" />
     <section class="card">
       <div class="badge">CHYBA / 500</div>
       <h1>Chodník je dočasne zatvorený.</h1>

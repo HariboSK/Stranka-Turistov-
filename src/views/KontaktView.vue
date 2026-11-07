@@ -55,7 +55,11 @@ import FooterSection from '../components/FooterSection.vue'
             </div>
             <button type="submit" class="btn-submit">Poslať správu</button>
           </form>
-
+          <img
+            src="/IMG/maskot/MaskotKontaktPage.png"
+            alt="Maskot turistov"
+            class="kontakt-maskot"
+          />
         </div>
       </div>
     </section>

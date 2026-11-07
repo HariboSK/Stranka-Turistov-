@@ -46,6 +46,7 @@ async function submitAuth(event) {
 <template>
   <main class="auth-page">
     <section class="auth-card">
+      <img src="/IMG/maskot/FormularMaskot.png" alt="MaskotLogIn" class="form-mascot" aria-hidden="true" />
       <RouterLink to="/" class="auth-logo-link">
         <img src="/IMG/navbar/logo.webp" alt="Logo turistov" class="auth-logo" />
       </RouterLink>

@@ -11,9 +11,10 @@
 .kontakt-section {
   color: var(--cream);
   isolation: isolate;
-  min-height: 820px;
-  padding: var(--section-padding) clamp(22px, 10vw, 150px);
+  min-height: calc(100vh - 76px);
+  padding: clamp(42px, 5vw, 72px) clamp(22px, 10vw, 150px);
   position: relative;
+  z-index: 3;
 }
 .kontakt-section .container {
   margin: auto;
@@ -22,7 +23,7 @@
   z-index: 1;
 }
 .kontakt-title {
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 .kontakt-section .section-label {
   color: var(--sun-light);
@@ -33,31 +34,32 @@
 }
 .kontakt-popis {
   color: rgba(248, 246, 240, 0.82);
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.4;
   max-width: 540px;
 }
 .kontakt-container {
   display: grid;
   grid-template-columns: minmax(0, 680px);
-  margin-top: 48px;
+  margin-top: 26px;
+  position: relative;
 }
 .contact-form {
   background: rgba(248, 246, 240, 0.97);
   border: 0;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
   color: var(--ink);
-  padding: clamp(22px, 5vw, 52px);
+  padding: clamp(16px, 2.4vw, 28px);
 }
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .form-group label {
   display: block;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.1em;
-  margin-bottom: 7px;
+  margin-bottom: 4px;
   text-transform: uppercase;
 }
 .form-group input,
@@ -67,7 +69,7 @@
   border: 1px solid var(--olive-border);
   border-radius: 0;
   color: var(--ink);
-  padding: 13px 12px;
+  padding: 9px 10px;
   width: 100%;
 }
 .form-group input:focus,
@@ -85,7 +87,7 @@
   align-items: start;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 5px;
 }
 .checkbox-group input {
   width: auto;
@@ -108,10 +110,40 @@
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
-  padding: 17px 22px;
+  padding: 12px 18px;
   text-transform: uppercase;
 }
 .btn-submit:hover {
   background: var(--sun);
   color: var(--ink);
+}
+.kontakt-maskot {
+  bottom: -130px;
+  height: calc(100% + 500px);
+  object-position: bottom center;
+  object-fit: contain;
+  pointer-events: none;
+  position: absolute;
+  right: -250px;
+  width: min(45vw, 800px);
+  z-index: 0;
+}
+body:has(.kontakt-section) .wave-top,
+body:has(.kontakt-section) .footer-section {
+  position: relative;
+  z-index: 10;
+}
+@media (max-width: 860px) {
+  .kontakt-container {
+    grid-template-columns: 1fr;
+  }
+  .kontakt-maskot {
+    bottom: auto;
+    height: auto;
+    margin: 28px auto -40px;
+    max-width: 220px;
+    position: relative;
+    right: auto;
+    width: 100%;
+  }
 }
